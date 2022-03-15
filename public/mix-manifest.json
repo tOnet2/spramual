@@ -1,3 +1,8 @@
 {
-    "/css/tailwind.css": "/css/tailwind.css"
+    "/css/tailwind.css": "/css/tailwind.css",
+    "/css/app.css": "/css/app.css",
+    "/js/main.js": "/js/main.js",
+    "/css/main.css": "/css/main.css",
+    "/js/bootstrap.bundle.js.map": "/js/bootstrap.bundle.js.map",
+    "/css/bootstrap.css.map": "/css/bootstrap.css.map"
 }
