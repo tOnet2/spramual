@@ -21,8 +21,12 @@
                 <small class="text-muted">
                 17.03.2022 18:15
                 </small>
-                <a class="btn btn-primary btn-sm float-end" href="#" role="button">Удалить</a>
+                @auth
+                    @if(auth()->user()->is_admin)
+                    <a class="btn btn-primary btn-sm float-end" href="#" role="button">Удалить</a>
+                    @endif
                 <a class="btn btn-primary btn-sm float-end mx-2" href="#" role="button">Редактировать</a>
+                @endauth
             </div>
         </div>
     </div>
