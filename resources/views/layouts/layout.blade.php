@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="stylesheet" href="assets/css/app.css">
+    <style>
+
+    </style>
 </head>
 <body>
 
