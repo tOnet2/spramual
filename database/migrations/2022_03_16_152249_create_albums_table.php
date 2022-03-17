@@ -17,9 +17,9 @@ class CreateAlbumsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
-            $table->string('genre');
+            $table->tinyInteger('genre_id');
             $table->text('history');
-            $table->string('img')->default('no_image.jpg');
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ Route::group(['middleware' => 'guest'], function ()
 Route::group(['middleware' => 'auth'], function ()
 {
     Route::get('logout', [\App\Http\Controllers\LoginController::class, 'logOut'])->name('logout');
+    Route::get('addalbum', [\App\Http\Controllers\AddAlubmController::class, 'index'])->name('addalbum');
+    Route::post('addalbum', [\App\Http\Controllers\AddAlubmController::class, 'store'])->name('addalbum.store');
 });
 
 Route::fallback(function ()

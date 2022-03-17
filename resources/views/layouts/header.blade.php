@@ -5,7 +5,7 @@
         </ul>
         <ul class="nav">
             @auth
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Добавить пластинку</a></li>
+            <li class="nav-item"><a href="{{ route('addalbum') }}" class="nav-link link-dark px-2">Добавить пластинку</a></li>
             <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link link-dark px-2">Выход</a></li>
             @endauth
             @guest
@@ -19,7 +19,7 @@
     <div class="container-xl d-flex flex-wrap justify-content-center">
         @auth
         <div class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-            <img src="{{ 'storage/' . auth()->user()->avatar }}" alt="Bootstrap" width="50" height="50">
+            <img src="{{ auth()->user()->avatar == null ? 'storage/images/no_avatar.jpg' : 'storage/' . auth()->user()->avatar }}" alt="Bootstrap" width="50" height="50">
             <span class="fs-4 mx-2">{{ auth()->user()->name }}</span>
         </div>
         @endauth
@@ -33,6 +33,13 @@
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
+        </div>
+    @endif
+</div>
+<div class="container-xl">
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
         </div>
     @endif
 </div>
