@@ -1,7 +1,7 @@
 <nav class="py-2 bg-light border-bottom">
     <div class="container-xl d-flex flex-wrap">
         <ul class="nav me-auto">
-            <li class="nav-item"><a href="{{ route('home') }}" class="nav-link link-dark px-2 active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="{{ route('main') }}" class="nav-link link-dark px-2 active" aria-current="page">Главная</a></li>
         </ul>
         <ul class="nav">
             @auth
@@ -10,7 +10,7 @@
             @endauth
             @guest
             <li class="nav-item"><a href="{{ route('login') }}" class="nav-link link-dark px-2">Войти</a></li>
-            <li class="nav-item"><a href="{{ route('registration') }}" class="nav-link link-dark px-2">Регистрация</a></li>
+            <li class="nav-item"><a href="{{ route('register') }}" class="nav-link link-dark px-2">Регистрация</a></li>
             @endguest
         </ul>
     </div>
@@ -19,7 +19,7 @@
     <div class="container-xl d-flex flex-wrap justify-content-center">
         @auth
         <div class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-            <img src="{{ auth()->user()->avatar == null ? 'storage/images/no_avatar.jpg' : 'storage/' . auth()->user()->avatar }}" alt="Bootstrap" width="50" height="50">
+            <img src="{{ auth()->user()->avatar == null ? asset('storage/images/no_avatar.jpg') : asset('storage/' . auth()->user()->avatar) }}" alt="" width="50" height="50">
             <span class="fs-4 mx-2">{{ auth()->user()->name }}</span>
         </div>
         @endauth
@@ -40,6 +40,13 @@
     @if(session('error'))
         <div class="alert alert-danger">
             {{ session('error') }}
+        </div>
+    @endif
+</div>
+<div class="container-xl">
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
         </div>
     @endif
 </div>
